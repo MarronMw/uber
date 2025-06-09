@@ -4,9 +4,19 @@ class DestinationSearchPage extends StatelessWidget {
   final List<Map<String, String>> locations = [
     {'title': 'Zasti Clinic', 'subtitle': 'Lusaka, Chongwe, Chinkuli'},
     {'title': 'Waterfalls hotel', 'subtitle': 'Lusaka, Chongwe, Ntandabale'},
-    {'title': 'Zaf Lusaka Base Clinic', 'subtitle': 'Lusaka, Chongwe, Chinkuli'},
-    {'title': 'Lusaka Inter-City Bus Terminus', 'subtitle': 'Lusaka, Central Business District'},
+    {
+      'title': 'Zaf Lusaka Base Clinic',
+      'subtitle': 'Lusaka, Chongwe, Chinkuli',
+    },
+    {
+      'title': 'Lusaka Inter-City Bus Terminus',
+      'subtitle': 'Lusaka, Central Business District',
+    },
   ];
+
+  DestinationSearchPage({
+    super.key,
+  }); //just calling thed super class no need for const
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +30,19 @@ class DestinationSearchPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text('To request a ride', style: TextStyle(color: Colors.white70)),
+                  Text(
+                    'To request a ride',
+                    style: TextStyle(color: Colors.white70),
+                  ),
                   SizedBox(height: 8),
-                  Text('Enter your destination ⬇️',
-                      style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.bold)),
+                  Text(
+                    'Enter your destination ⬇️',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -61,7 +80,10 @@ class DestinationSearchPage extends StatelessWidget {
                       title: Text(locations[index]['title']!),
                       subtitle: Text(locations[index]['subtitle']!),
                       onTap: () {
-                        Navigator.pushNamed(context, '/rideSummary'); // You define this route
+                        Navigator.pushNamed(
+                          context,
+                          '/rideSummary',
+                        ); // You define this route
                       },
                     );
                   },
